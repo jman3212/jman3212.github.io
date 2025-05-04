@@ -50,7 +50,7 @@ body {
     overflow: hidden; /* Disable scrolling initially */
 }
 
-/* New Parallax Background */
+/* Parallax Star Background */
 html {
     height: 100%;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
@@ -69,19 +69,19 @@ html {
 
 #stars {
     background: transparent;
-    box-shadow: var(--shadows-small, 0px 0px #FFF);
+    box-shadow: 0 0 2px #FFF, 100px 100px 2px #FFF, 200px 200px 2px #FFF;
     animation: move 50s linear infinite;
 }
 
 #stars2 {
     background: transparent;
-    box-shadow: var(--shadows-medium, 0px 0px #FFF);
+    box-shadow: 50px 50px 3px #FFF, 150px 150px 3px #FFF, 250px 250px 3px #FFF;
     animation: move 100s linear infinite;
 }
 
 #stars3 {
     background: transparent;
-    box-shadow: var(--shadows-big, 0px 0px #FFF);
+    box-shadow: 75px 75px 4px #FFF, 175px 175px 4px #FFF, 275px 275px 4px #FFF;
     animation: move 200s linear infinite;
 }
 
