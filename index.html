@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IXL Math</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add particles.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
     <!-- Loading screen -->
     <div id="loadingScreen">
         <div class="loader"></div>
     </div>
-
-    <div class="main"></div>
 
     <h1>Welcome To mathpunch V3</h1>
     <div class="button-container">
@@ -94,6 +96,11 @@
                 document.body.style.overflow = 'auto'; // Enable scrolling
             }, 2000); // Wait for 2 seconds before fading out
         };
+
+        // Initialize particles.js
+        particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+            console.log('particles.js config loaded');
+        });
     </script>
 </body>
 </html>
