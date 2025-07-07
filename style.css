@@ -48,6 +48,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: #000; /* Ensure solid black background */
 }
 
 /* Content sits above particles background */
