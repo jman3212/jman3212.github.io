@@ -106,28 +106,4 @@ footer {
     pointer-events: none;
 }
 
-/* Restore your .main background if you want it on top of particles.js */
-.main {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 1px;
-    width: 1px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: -42vw -4vh 0px 0px #fff,25vw -41vh 0px 0px #fff,-20vw 49vh 0px 1px #fff,5vw 40vh 1px 1px #fff,29vw 19vh 1px 0px #fff,-44vw -13vh 0px 0px #fff,46vw 41vh 0px 1px #fff,-3vw -45vh 0px 1px #fff,47vw -49vh 1px 0px #fff,-21vw -41vh 0px 0px #fff,-28vw 43vh 1px 0px #fff,4vw 36vh 0px 0px #fff,8vw -11vh 0px 1px #fff,-43vw -45vh 0px 0px #fff,45vw 19vh 1px 1px #fff,2vw 23vh 1px 0px #fff,3vw 2vh 1px 1px #fff,18vw -1vh 0px 1px #fff,-41vw -12vh 1px 0px #fff,8vw -23vh 0px 0px #fff,-13vw 2vh 0px 1px #fff;
-    animation: zoom 16s alternate infinite; 
-    z-index: 1;
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1.5);
-    }
-}
+/* Removed .main and @keyframes zoom to eliminate the "space" animated particles */
