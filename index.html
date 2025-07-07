@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IXL Math</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Add particles.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- Particles.js container -->
-    <div id="particles-js"></div>
     <!-- Loading screen -->
     <div id="loadingScreen">
         <div class="loader"></div>
     </div>
 
+    <div class="main"></div>
+
     <h1>Welcome To mathpunch V3</h1>
     <div class="button-container">
         <h2>Games</h2>
+        <!-- Removed Roblox (Down) -->
+        <!-- Removed Retro Brawl (Kinda Broken) -->
         <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/beaver/'; }, 350);">Drift Boss</button>
         <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/goose/'; }, 350);">Bottle Flip</button>
         <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/butterfly/'; }, 350);">Subway Surfers</button>
@@ -56,6 +56,7 @@
         <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://studyhub.rocketpride.com'; }, 350);">Server 10</button>
 
         <h2>Extra</h2>
+        <!-- Removed mathpunch Music Player (BETA) -->
         <button onclick="setTimeout(() => { window.location.href='https://discord.gg/s8Z8cesAQh'; }, 350);">gameshub IP Puller 1.0 (Still made by mathpunch)</button>
         <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/robloxaccount/'; }, 350);">Roblox Account Taker 1.0</button>
         <button onclick="setTimeout(() => { window.location.href='https://koj.vercel.app/'; }, 350);">GoGuardian Bypass</button>
@@ -93,11 +94,6 @@
                 document.body.style.overflow = 'auto'; // Enable scrolling
             }, 2000); // Wait for 2 seconds before fading out
         };
-
-        // Initialize particles.js
-        particlesJS.load('particles-js', 'particlesjs-config.json', function() {
-            console.log('particles.js config loaded');
-        });
     </script>
 </body>
 </html>
