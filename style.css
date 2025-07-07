@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* Highest z-index to cover everything */
+    z-index: 99999;
     opacity: 1;
     pointer-events: all;
     transition: opacity 2s ease;
@@ -34,4 +34,101 @@
     100% { transform: rotate(360deg);}
 }
 
-/* ...rest of your styles remain the same... */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 60px;
+    background-color: #000;
+    color: white;
+}
+
+body.loading {
+    overflow: hidden !important;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 1.5em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+h2, button, footer {
+    font-family: 'Arial', sans-serif;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 80vh;
+    width: 100%;
+}
+
+button {
+    margin: 15px 0;
+    background-color: #333;
+    color: white;
+    border: 2px solid #555;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Particles.js background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Restore your .main background if you want it on top of particles.js */
+.main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -42vw -4vh 0px 0px #fff,25vw -41vh 0px 0px #fff,-20vw 49vh 0px 1px #fff,5vw 40vh 1px 1px #fff,29vw 19vh 1px 0px #fff,-44vw -13vh 0px 0px #fff,46vw 41vh 0px 1px #fff,-3vw -45vh 0px 1px #fff,47vw -49vh 1px 0px #fff,-21vw -41vh 0px 0px #fff,-28vw 43vh 1px 0px #fff,4vw 36vh 0px 0px #fff,8vw -11vh 0px 1px #fff,-43vw -45vh 0px 0px #fff,45vw 19vh 1px 1px #fff,2vw 23vh 1px 0px #fff,3vw 2vh 1px 1px #fff,18vw -1vh 0px 1px #fff,-41vw -12vh 1px 0px #fff,8vw -23vh 0px 0px #fff,-13vw 2vh 0px 1px #fff;
+    animation: zoom 16s alternate infinite; 
+    z-index: 1;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
