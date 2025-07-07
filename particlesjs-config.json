@@ -1,11 +1,11 @@
 {
   "particles": {
-    "number": {
-      "value": 0,
-      "density": {
-        "enable": false,
-        "value_area": 0
-      }
-    }
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": ["#ff0000", "#00ff00", "#0000ff"] }, 
+    "shape": { "type": "circle" },
+    "opacity": { "value": 1 },
+    "size": { "value": 5 },
+    "line_linked": { "enable": false },
+    "move": { "enable": true, "speed": 6 }
   }
 }
