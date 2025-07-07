@@ -1,4 +1,3 @@
-/* Loading screen styles */
 #loadingScreen {
     position: fixed;
     top: 0;
@@ -21,7 +20,7 @@
 }
 
 .loader {
-    border: 4px solid white;
+    border: 4px solid #ff0000; /* Pitch red */
     border-radius: 50%;
     width: 36px;
     height: 36px;
