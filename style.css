@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 1000;
     opacity: 1;
     transition: opacity 2s ease; /* Fade-out transition */
 }
@@ -38,6 +38,25 @@
     pointer-events: none;
 }
 
+/* Particles.js background */
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000; /* Ensure solid black background */
+}
+
+/* Content sits above particles background */
+body, h1, h2, .button-container, button, footer {
+    position: relative;
+    z-index: 1;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -46,7 +65,7 @@ body {
     margin: 0;
     padding: 20px;
     padding-bottom: 60px;
-    background-color: #000;
+    background: transparent;
     color: white;
     overflow: hidden; /* Disable scrolling initially */
 }
@@ -100,13 +119,7 @@ footer {
     color: white;
 }
 
-/* New Animated Background */
+/* Remove the old .main animated background */
 .main {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 1px;
-    width: 1px;
-    background-color: #fff; /* Keep particles/animated background white */
-    border-radius: 50%;
+    display: none !important;
 }
