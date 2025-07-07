@@ -107,6 +107,6 @@ footer {
     left: 50%;
     height: 1px;
     width: 1px;
-    background-color: #fff;
+    background-color: #fff; /* Keep particles/animated background white */
     border-radius: 50%;
 }
