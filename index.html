@@ -1,76 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MathPunch</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXL Math</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add particles.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- Particle background always visible -->
-  <div class="main" id="particles"></div>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+    <!-- Loading screen -->
+    <div id="loadingScreen">
+        <div class="loader"></div>
+    </div>
 
-  <!-- Loading Screen -->
-  <div id="loadingScreen">
-    <div class="loader"></div>
-  </div>
+    <h1>Welcome To mathpunch V3</h1>
+    <div class="button-container">
+        <h2>Games</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/beaver/'; }, 350);">Drift Boss</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/goose/'; }, 350);">Bottle Flip</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/butterfly/'; }, 350);">Subway Surfers</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/duck/'; }, 350);">Block Blast</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/pig/'; }, 350);">OvO</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/panda/'; }, 350);">BitLife</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/kitty/'; }, 350);">Stickmanhook</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/dog/'; }, 350);">Super Mario 64</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/bear/'; }, 350);">Tiny Fishing</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/snake/'; }, 350);">Tap Tap Shots</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/shark/'; }, 350);">Drive Mad</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/zebra/'; }, 350);">Emulator JS</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/turtle/'; }, 350);">Wordle Unlimited</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/doggy/'; }, 350);">Fruit Ninja</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/fox/'; }, 350);">Rooftop Snipers</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/bat/'; }, 350);">Tunnel Rush</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/wolf/'; }, 350);">Burrito Bison</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/monkey/'; }, 350);">Trash Truck Simulator</button>
 
-  <!-- Main site content -->
-  <div id="appContent">
-    <h1>Welcome to MathPunch</h1>
-    <!-- ...rest of your content... -->
-  </div>
+        <h2>Games For Emulator JS</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario Kart.zip'; }, 350);">DS: Mario Kart</button>
+        <button onclick="setTimeout(() => { window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon Red Fire.zip'; }, 350);">GBA: Pokémon Red Fire</button>
+        <button onclick="setTimeout(() => { window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO Star Wars II.zip'; }, 350);">GBA: Lego Star Wars II</button>
 
-  <script>
-    // Example loading screen fade-out
-    window.addEventListener('load', function() {
-      document.getElementById('loadingScreen').classList.add('fadeOut');
-      setTimeout(() => {
-        document.getElementById('loadingScreen').style.display = 'none';
-      }, 2000); // Match your CSS transition!
-    });
+        <h2>Proxy</h2>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='https://arcticmath.vercel.app'; }, 350);">Server 1</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://classroom.rocketpride.com'; }, 350);">Server 2</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://library.rocketpride.com'; }, 350);">Server 3</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://portal.rocketpride.com'; }, 350);">Server 4</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://scholar.rocketpride.com'; }, 350);">Server 5</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://academy.rocketpride.com'; }, 350);">Server 6</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://learn.rocketpride.com'; }, 350);">Server 7</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://projects.rocketpride.com'; }, 350);">Server 8</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://resources.rocketpride.com'; }, 350);">Server 9</button>
+        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://studyhub.rocketpride.com'; }, 350);">Server 10</button>
 
-    // Example simple white particle animation
-    // Replace this with your actual particle animation code!
-    const canvas = document.createElement('canvas');
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.position = 'absolute';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.zIndex = '0';
-    canvas.style.pointerEvents = 'none';
-    document.getElementById('particles').appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-    const particles = Array.from({length: 80}, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
-    }));
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for(let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#fff";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if(p.x < 0) p.x = canvas.width;
-        if(p.x > canvas.width) p.x = 0;
-        if(p.y < 0) p.y = canvas.height;
-        if(p.y > canvas.height) p.y = 0;
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-    window.addEventListener('resize',()=>{
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
+        <h2>Extra</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://discord.gg/s8Z8cesAQh'; }, 350);">gameshub IP Puller 1.0 (Still made by mathpunch)</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/robloxaccount/'; }, 350);">Roblox Account Taker 1.0</button>
+        <button onclick="setTimeout(() => { window.location.href='https://koj.vercel.app/'; }, 350);">GoGuardian Bypass</button>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/lion/'; }, 350);">Gatekeeping Version (BETA)</button>
+        <button onclick="setTimeout(() => { window.location.href='https://discord.gg/p9tU5XkrMB'; }, 350);">mathpunch V3 Discord Server</button>
+
+        <h2>Games Requests</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link'; }, 350);">Click Me</button>
+
+        <h2>Adblocker (For iOS Only)</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5'; }, 350);">Click Me</button>
+
+        <h2>Chatting</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/mrfish/'; }, 350);">Click Me</button>
+
+        <h2>Backup Links</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://extramath.github.io/'; }, 350);">Click Me</button>
+        <button onclick="setTimeout(() => { window.location.href='https://solixmath.github.io'; }, 350);">Click Me</button>
+
+        <h2>Prank Shortcut (For iOS Only)</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f'; }, 350);">Click Me</button>
+
+        <h2>mathpunch V3 Source Codes</h2>
+        <button onclick="setTimeout(() => { window.location.href='https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/index.html'; }, 350);">index.html</button>
+        <button onclick="setTimeout(() => { window.location.href='https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/style.css'; }, 350);">style.css</button>
+    </div>
+
+    <script>
+        // Disable scrolling during loading
+        window.onload = function() {
+            setTimeout(function() {
+                // Fade out the loading screen
+                document.getElementById('loadingScreen').classList.add('fadeOut');
+                // Enable scrolling once the loading screen fades out
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }, 2000); // Wait for 2 seconds before fading out
+        };
+
+        // Initialize particles.js
+        particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+            console.log('particles.js config loaded');
+        });
+    </script>
 </body>
 </html>
