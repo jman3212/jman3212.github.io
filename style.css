@@ -15,7 +15,7 @@
 }
 
 .loader {
-    border: 4px solid #ff0000; /* Pitch red */
+    border: 4px solid #ff0000;
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -70,7 +70,7 @@ h2, button, footer {
     width: 100%;
 }
 
-/* Updated buttons: pitch black background with pitch red text */
+/* Updated buttons */
 button {
     margin: 15px 0;
     background-color: #000000;
@@ -100,17 +100,42 @@ footer {
     color: white;
 }
 
-/* Animated Background with Pitch Red Particles */
+/* Visible & animated red particle backdrop */
 .main {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 1px;
-    width: 1px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    box-shadow: /* [unchanged particle shadows] */;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
     animation: zoom 16s alternate infinite;
+    box-shadow:
+        5vw 10vh 2px 2px #ff0000,
+        10vw 20vh 2px 2px #ff0000,
+        15vw 30vh 2px 2px #ff0000,
+        20vw 40vh 2px 2px #ff0000,
+        25vw 50vh 2px 2px #ff0000,
+        30vw 60vh 2px 2px #ff0000,
+        35vw 70vh 2px 2px #ff0000,
+        40vw 80vh 2px 2px #ff0000,
+        45vw 90vh 2px 2px #ff0000,
+        50vw 100vh 2px 2px #ff0000,
+        -5vw -10vh 2px 2px #ff0000,
+        -10vw -20vh 2px 2px #ff0000,
+        -15vw -30vh 2px 2px #ff0000,
+        -20vw -40vh 2px 2px #ff0000,
+        -25vw -50vh 2px 2px #ff0000,
+        -30vw -60vh 2px 2px #ff0000;
 }
 
 @keyframes zoom {
