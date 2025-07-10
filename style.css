@@ -15,7 +15,7 @@
 }
 
 .loader {
-    border: 4px solid white;
+    border: 4px solid #ff0000; /* Changed from white to pitch red */
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -121,6 +121,4 @@ footer {
         transform: scale(1.25);
     }
     100% {
-        transform: scale(1.5);
-    }
-}
+        transform: scale(1.
