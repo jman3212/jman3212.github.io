@@ -100,8 +100,8 @@ footer {
     color: white;
 }
 
-/* Visible & animated red particle backdrop */
-.main {
+/* Red particle backdrop */
+.particle-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -111,41 +111,28 @@ footer {
     z-index: 0;
 }
 
-.main::before {
-    content: "";
+/* Individual red particles */
+.particle {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    animation: zoom 16s alternate infinite;
-    box-shadow:
-        5vw 10vh 2px 2px #ff0000,
-        10vw 20vh 2px 2px #ff0000,
-        15vw 30vh 2px 2px #ff0000,
-        20vw 40vh 2px 2px #ff0000,
-        25vw 50vh 2px 2px #ff0000,
-        30vw 60vh 2px 2px #ff0000,
-        35vw 70vh 2px 2px #ff0000,
-        40vw 80vh 2px 2px #ff0000,
-        45vw 90vh 2px 2px #ff0000,
-        50vw 100vh 2px 2px #ff0000,
-        -5vw -10vh 2px 2px #ff0000,
-        -10vw -20vh 2px 2px #ff0000,
-        -15vw -30vh 2px 2px #ff0000,
-        -20vw -40vh 2px 2px #ff0000,
-        -25vw -50vh 2px 2px #ff0000,
-        -30vw -60vh 2px 2px #ff0000;
+    width: 6px;
+    height: 6px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    animation: particleZoom 10s ease-in-out infinite;
+    opacity: 0.5;
 }
 
-@keyframes zoom {
+@keyframes particleZoom {
     0% {
         transform: scale(1);
+        opacity: 0.5;
     }
     50% {
-        transform: scale(1.25);
+        transform: scale(1.5);
+        opacity: 1;
     }
     100% {
-        transform: scale(1.5);
+        transform: scale(1);
+        opacity: 0.5;
     }
 }
