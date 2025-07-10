@@ -15,14 +15,15 @@
 }
 
 .loader {
-    border: 4px solid #ff0000;
+    border: 4px solid #ff0000; /* Pitch red border */
     border-radius: 50%;
     width: 36px;
     height: 36px;
-    animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite, pulseGlow 1.5s ease-in-out infinite;
     border-top-color: transparent;
 }
 
+/* Spin animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -32,107 +33,20 @@
     }
 }
 
+/* Pulse glow effect */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px #ff0000;
+    }
+    50% {
+        box-shadow: 0 0 15px #ff0000;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff0000;
+    }
+}
+
 #loadingScreen.fadeOut {
     opacity: 0;
     pointer-events: none;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    padding-bottom: 60px;
-    background-color: #000;
-    color: white;
-    overflow: hidden;
-}
-
-h1 {
-    margin: 20px 0;
-    font-size: 1.5em;
-    text-align: center;
-    white-space: nowrap;
-}
-
-h2, button, footer {
-    font-family: 'Arial', sans-serif;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    max-height: 80vh;
-    width: 100%;
-}
-
-/* Updated buttons */
-button {
-    margin: 15px 0;
-    background-color: #000000;
-    color: #ff0000;
-    border: 2px solid #555;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #1a1a1a;
-    transform: scale(1.05);
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    text-align: center;
-    background-color: #1a1a1a;
-    color: white;
-}
-
-/* Red particle backdrop */
-.particle-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Individual red particles */
-.particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: particleZoom 10s ease-in-out infinite;
-    opacity: 0.5;
-}
-
-@keyframes particleZoom {
-    0% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
 }
