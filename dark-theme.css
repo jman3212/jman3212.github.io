@@ -1,0 +1,141 @@
+/* Dark Theme with Red Accents for mathpunch.github.io */
+:root {
+  --bg-main: #181818;
+  --bg-card: #232323;
+  --text-main: #ececec;
+  --text-muted: #b0b0b0;
+  --accent-red: #ff1744;
+  --accent-red-dark: #d50000;
+  --accent-glow: 0 0 8px #ff1744;
+  --border-radius: 10px;
+  --shadow: 0 4px 24px rgba(255,23,68,0.1);
+  --font-heading: 'Montserrat', 'Poppins', 'Roboto', sans-serif;
+  --font-body: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Base styles */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+a, .accent {
+  color: var(--accent-red);
+  transition: color 0.2s;
+}
+
+a:hover, .accent:hover {
+  color: var(--accent-red-dark);
+  text-shadow: var(--accent-glow);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--accent-red);
+  margin-bottom: 0.5em;
+}
+
+/* Cards */
+.card, .container, .panel {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5em;
+  margin-bottom: 2em;
+  border: 1px solid var(--accent-red-dark);
+}
+
+/* Buttons */
+button, .btn {
+  background: var(--accent-red);
+  color: var(--text-main);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.7em 1.4em;
+  font-size: 1em;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  box-shadow: var(--accent-glow);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--accent-red-dark);
+  box-shadow: 0 0 16px var(--accent-red);
+  transform: scale(1.05);
+}
+
+/* Inputs */
+input, textarea, select {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--accent-red-dark);
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-red);
+  box-shadow: var(--accent-glow);
+}
+
+/* Navbar */
+.navbar, .nav {
+  background: var(--bg-card);
+  padding: 1em 2em;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a, .nav a {
+  color: var(--text-main);
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar a:hover, .nav a:hover, .nav .active {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+/* Red neon glow for cool effect */
+.glow {
+  text-shadow: 0 0 8px var(--accent-red), 0 0 16px var(--accent-red-dark);
+}
+
+/* Misc */
+hr {
+  border: none;
+  border-top: 1px solid var(--accent-red-dark);
+  margin: 2em 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--bg-card);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: 8px;
+}
+
+/* Responsive and utility */
+@media (max-width: 600px) {
+  .card, .container, .panel, .navbar {
+    padding: 1em;
+  }
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
+}
