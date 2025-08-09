@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
+    <title>mathpunch V3</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,87 +12,102 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Animated background -->
     <div class="main"></div>
 
-    <h1>Welcome To mathpunch V3</h1>
-    <div class="button-container">
-        <h2>Games</h2>
-        <!-- Removed Roblox (Down) -->
-        <!-- Removed Retro Brawl (Kinda Broken) -->
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/beaver/'; }, 350);">Drift Boss</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/goose/'; }, 350);">Bottle Flip</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/butterfly/'; }, 350);">Subway Surfers</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/duck/'; }, 350);">Block Blast</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/pig/'; }, 350);">OvO</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/panda/'; }, 350);">BitLife</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/kitty/'; }, 350);">Stickmanhook</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/dog/'; }, 350);">Super Mario 64</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/bear/'; }, 350);">Tiny Fishing</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/snake/'; }, 350);">Tap Tap Shots</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/shark/'; }, 350);">Drive Mad</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/zebra/'; }, 350);">Emulator JS</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/turtle/'; }, 350);">Wordle Unlimited</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/doggy/'; }, 350);">Fruit Ninja</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/fox/'; }, 350);">Rooftop Snipers</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/bat/'; }, 350);">Tunnel Rush</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/wolf/'; }, 350);">Burrito Bison</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/monkey/'; }, 350);">Trash Truck Simulator</button>
+    <header>
+        <h1>Welcome to mathpunch V3</h1>
+    </header>
 
-        <h2>Games For Emulator JS</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario Kart.zip'; }, 350);">DS: Mario Kart</button>
-        <button onclick="setTimeout(() => { window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon Red Fire.zip'; }, 350);">GBA: Pokémon Red Fire</button>
-        <button onclick="setTimeout(() => { window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO Star Wars II.zip'; }, 350);">GBA: Lego Star Wars II</button>
+    <div class="content">
+        <section>
+            <h2>Games</h2>
+            <div class="button-grid">
+                <button onclick="goto('https://mathpunch.github.io/beaver/')">Drift Boss</button>
+                <button onclick="goto('https://mathpunch.github.io/goose/')">Bottle Flip</button>
+                <button onclick="goto('https://mathpunch.github.io/butterfly/')">Subway Surfers</button>
+                <button onclick="goto('https://mathpunch.github.io/duck/')">Block Blast</button>
+                <button onclick="goto('https://mathpunch.github.io/pig/')">OvO</button>
+                <button onclick="goto('https://mathpunch.github.io/panda/')">BitLife</button>
+                <button onclick="goto('https://mathpunch.github.io/kitty/')">Stickman Hook</button>
+                <button onclick="goto('https://mathpunch.github.io/dog/')">Super Mario 64</button>
+                <button onclick="goto('https://mathpunch.github.io/bear/')">Tiny Fishing</button>
+                <button onclick="goto('https://mathpunch.github.io/snake/')">Tap Tap Shots</button>
+                <button onclick="goto('https://mathpunch.github.io/shark/')">Drive Mad</button>
+                <button onclick="goto('https://mathpunch.github.io/zebra/')">Emulator JS</button>
+                <button onclick="goto('https://mathpunch.github.io/turtle/')">Wordle Unlimited</button>
+                <button onclick="goto('https://mathpunch.github.io/doggy/')">Fruit Ninja</button>
+                <button onclick="goto('https://mathpunch.github.io/fox/')">Rooftop Snipers</button>
+                <button onclick="goto('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
+                <button onclick="goto('https://mathpunch.github.io/wolf/')">Burrito Bison</button>
+                <button onclick="goto('https://mathpunch.github.io/monkey/')">Trash Truck Simulator</button>
+            </div>
+        </section>
 
-        <h2>Proxy</h2>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='https://arcticmath.vercel.app'; }, 350);">Server 1</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://classroom.rocketpride.com'; }, 350);">Server 2</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://library.rocketpride.com'; }, 350);">Server 3</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://portal.rocketpride.com'; }, 350);">Server 4</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://scholar.rocketpride.com'; }, 350);">Server 5</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://academy.rocketpride.com'; }, 350);">Server 6</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://learn.rocketpride.com'; }, 350);">Server 7</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://projects.rocketpride.com'; }, 350);">Server 8</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://resources.rocketpride.com'; }, 350);">Server 9</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); setTimeout(() => { window.location.href='http://studyhub.rocketpride.com'; }, 350);">Server 10</button>
+        <section>
+            <h2>Games for Emulator JS</h2>
+            <div class="button-grid">
+                <button onclick="goto('https://github.com/ixlmathgg/flashy/raw/main/Mario Kart.zip')">DS: Mario Kart</button>
+                <button onclick="goto('https://github.com/ixlmathgg/Licky/raw/main/Pokemon Red Fire.zip')">GBA: Pokémon Red Fire</button>
+                <button onclick="goto('https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO Star Wars II.zip')">GBA: Lego Star Wars II</button>
+            </div>
+        </section>
 
-        <h2>Extra</h2>
-        <!-- Removed mathpunch Music Player (BETA) -->
-        <button onclick="setTimeout(() => { window.location.href='https://discord.gg/vEQKTcR5nx'; }, 350);">X Plague X (Still made by mathpunch)</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/robloxaccount/'; }, 350);">Roblox Account Taker 1.0</button>
-        <button onclick="setTimeout(() => { window.location.href='https://koj.vercel.app/'; }, 350);">GoGuardian Bypass</button>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/lion/'; }, 350);">Gatekeeping Version (BETA)</button>
-        <button onclick="setTimeout(() => { window.location.href='https://discord.gg/my8Xkpvf/'; }, 350);">mathpunch V3 Discord Server</button>
+        <section>
+            <h2>Proxy</h2>
+            <div class="button-grid">
+                <button onclick="proxy('https://arcticmath.vercel.app')">Server 1</button>
+                <button onclick="proxy('http://classroom.rocketpride.com')">Server 2</button>
+                <button onclick="proxy('http://library.rocketpride.com')">Server 3</button>
+                <button onclick="proxy('http://portal.rocketpride.com')">Server 4</button>
+                <button onclick="proxy('http://scholar.rocketpride.com')">Server 5</button>
+                <button onclick="proxy('http://academy.rocketpride.com')">Server 6</button>
+                <button onclick="proxy('http://learn.rocketpride.com')">Server 7</button>
+                <button onclick="proxy('http://projects.rocketpride.com')">Server 8</button>
+                <button onclick="proxy('http://resources.rocketpride.com')">Server 9</button>
+                <button onclick="proxy('http://studyhub.rocketpride.com')">Server 10</button>
+            </div>
+        </section>
 
-        <h2>Games Requests</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSeE-TsDjMLWCdc1wW7JioosUwZr02B9NkO9rEWMlPchUs-4bg/viewform?usp=dialog'; }, 350);">Click Me</button>
+        <section>
+            <h2>Extra</h2>
+            <div class="button-grid">
+                <button onclick="goto('https://discord.gg/vEQKTcR5nx')">X Plague X</button>
+                <button onclick="goto('https://mathpunch.github.io/robloxaccount/')">Roblox Account Taker 1.0</button>
+                <button onclick="goto('https://koj.vercel.app/')">GoGuardian Bypass</button>
+                <button onclick="goto('https://mathpunch.github.io/lion/')">Gatekeeping Version (BETA)</button>
+                <button onclick="goto('https://discord.gg/my8Xkpvf/')">mathpunch V3 Discord Server</button>
+            </div>
+        </section>
 
-        <h2>Adblocker (For iOS Only)</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5'; }, 350);">Click Me</button>
-
-        <h2>Chatting</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://mathpunch.github.io/mrfish/'; }, 350);">Click Me</button>
-
-        <h2>Backup Links</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://extramath.github.io/'; }, 350);">Click Me</button>
-        <button onclick="setTimeout(() => { window.location.href='https://solixmath.github.io'; }, 350);">Click Me</button>
-
-        <h2>Prank Shortcut (For iOS Only)</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f'; }, 350);">Click Me</button>
-
-        <h2>mathpunch V3 Source Codes</h2>
-        <button onclick="setTimeout(() => { window.location.href='https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/index.html'; }, 350);">index.html</button>
-        <button onclick="setTimeout(() => { window.location.href='https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/style.css'; }, 350);">style.css</button>
+        <section>
+            <h2>Other Links</h2>
+            <div class="button-grid">
+                <button onclick="goto('https://docs.google.com/forms/d/e/1FAIpQLSeE-TsDjMLWCdc1wW7JioosUwZr02B9NkO9rEWMlPchUs-4bg/viewform?usp=dialog')">Game Requests</button>
+                <button onclick="goto('https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5')">Adblocker (iOS)</button>
+                <button onclick="goto('https://mathpunch.github.io/mrfish/')">Chatting</button>
+                <button onclick="goto('https://extramath.github.io/')">Backup Link 1</button>
+                <button onclick="goto('https://solixmath.github.io')">Backup Link 2</button>
+                <button onclick="goto('https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f')">Prank Shortcut (iOS)</button>
+                <button onclick="goto('https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/index.html')">index.html Source</button>
+                <button onclick="goto('https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/style.css')">style.css Source</button>
+            </div>
+        </section>
     </div>
 
     <script>
-        // Disable scrolling during loading
+        function goto(url) {
+            setTimeout(() => { window.location.href = url; }, 350);
+        }
+        function proxy(url) {
+            alert('A Proxy is A Website That You Can Go On Almost Any Websites');
+            goto(url);
+        }
         window.onload = function() {
-            setTimeout(function() {
-                // Fade out the loading screen
+            setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('fadeOut');
-                // Enable scrolling once the loading screen fades out
-                document.body.style.overflow = 'auto'; // Enable scrolling
-            }, 2000); // Wait for 2 seconds before fading out
+                document.body.style.overflow = 'auto';
+            }, 2000);
         };
     </script>
 </body>
