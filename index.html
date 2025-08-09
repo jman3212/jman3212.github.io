@@ -5,76 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>mathpunch V3</title>
 <style>
-  /* Basic Reset */
+  /* Reset */
   * {
     box-sizing: border-box;
   }
 
-  body {
+  body, html {
     margin: 0;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    background: #f0f0f5;
+    color: #222;
   }
 
   header {
-    padding: 1rem 1.5rem;
-    background: #1f1f1f;
+    background: #4a90e2;
+    color: white;
+    padding: 1rem;
     text-align: center;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 0.05em;
   }
 
   main {
-    flex: 1;
+    height: calc(100% - 56px); /* header height */
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
   }
 
-  nav {
-    width: 300px;
-    background: #222;
+  #menu {
     padding: 1rem;
     overflow-y: auto;
-    border-right: 1px solid #333;
+    flex: 1;
   }
 
-  nav h2 {
-    margin-top: 1.5rem;
+  h2 {
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 0.2rem;
   }
 
-  nav button {
-    display: block;
+  button {
     width: 100%;
     margin: 0.3rem 0;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
-    color: #eee;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
+    color: #444;
+    background-color: #e6f0ff;
+    border: 1px solid #99bfff;
+    border-radius: 6px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
   }
 
-  nav button:hover, nav button:focus {
-    background-color: #555;
+  button:hover, button:focus {
+    background-color: #4a90e2;
+    color: white;
     outline: none;
   }
 
-  #iframeContainer {
-    flex: 1;
-    background: #000;
-    display: flex;
+  /* Fullscreen iframe container */
+  #gameContainer {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: white;
+    z-index: 1000;
     flex-direction: column;
   }
 
@@ -82,33 +82,39 @@
     flex: 1;
     border: none;
     width: 100%;
-    background: #000;
+    height: 100%;
   }
 
-  #placeholder {
-    color: #666;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 2rem;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #backButton {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  #backButton:hover {
+    background: #3a78c2;
   }
 
   footer {
-    background: #1f1f1f;
-    padding: 0.5rem;
+    background: #f7f7f7;
+    color: #888;
+    padding: 10px;
     text-align: center;
     font-size: 0.9rem;
-    color: #777;
   }
 </style>
 </head>
 <body>
+
 <header>Welcome To mathpunch V3</header>
+
 <main>
-  <nav>
+  <section id="menu">
     <h2>Games</h2>
     <button data-url="https://mathpunch.github.io/beaver/">Drift Boss</button>
     <button data-url="https://mathpunch.github.io/goose/">Bottle Flip</button>
@@ -172,11 +178,11 @@
     <h2>mathpunch V3 Source Codes</h2>
     <button data-url="https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/index.html">index.html</button>
     <button data-url="https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/style.css">style.css</button>
-  </nav>
+  </section>
 
-  <section id="iframeContainer">
-    <div id="placeholder">Select a game or link from the left to load it here.</div>
-    <iframe id="gameFrame" style="display:none;"></iframe>
+  <section id="gameContainer" style="display: none; flex-direction: column;">
+    <button id="backButton">← Back to Menu</button>
+    <iframe id="gameFrame" src="" allowfullscreen></iframe>
   </section>
 </main>
 
@@ -185,9 +191,11 @@
 </footer>
 
 <script>
-  const buttons = document.querySelectorAll('nav button');
+  const buttons = document.querySelectorAll('#menu button');
+  const gameContainer = document.getElementById('gameContainer');
+  const menu = document.getElementById('menu');
   const iframe = document.getElementById('gameFrame');
-  const placeholder = document.getElementById('placeholder');
+  const backButton = document.getElementById('backButton');
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -196,11 +204,13 @@
       if (alertMsg) alert(alertMsg);
       if (url) {
         iframe.src = url;
-        iframe.style.display = 'block';
-        placeholder.style.display = 'none';
+        menu.style.display = 'none';
+        gameContainer.style.display = 'flex';
       }
     });
   });
-</script>
-</body>
-</html>
+
+  backButton.addEventListener('click', () => {
+    iframe.src = '';
+    gameContainer.style.display = 'none';
+    menu.style
