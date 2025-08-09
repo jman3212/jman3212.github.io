@@ -1,119 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mathpunch V3</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mathpunch V3 - Dark Star Dashboard</title>
+<style>
+  /* Reset and basics */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    color: #eee;
+    overflow: hidden;
+  }
+
+  /* Starry background */
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:
+      radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 40% 70%, #bbb, transparent),
+      radial-gradient(1.2px 1.2px at 60% 40%, #ddd, transparent),
+      radial-gradient(2.5px 2.5px at 80% 60%, #eee, transparent);
+    background-repeat: repeat;
+    background-size: 100vw 100vh;
+    animation: twinkle 10s linear infinite alternate;
+    z-index: 0;
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      background-position:
+        20% 30%,
+        40% 70%,
+        60% 40%,
+        80% 60%;
+    }
+    50% {
+      background-position:
+        22% 32%,
+        38% 68%,
+        63% 43%,
+        78% 58%;
+    }
+  }
+
+  /* Sidebar */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 280px;
+    background: rgba(20,20,35,0.85);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid #5511ccaa;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    z-index: 10;
+  }
+
+  #sidebar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #bb99ff;
+    text-align: center;
+    text-shadow: 0 0 6px #8866ff;
+    user-select: none;
+  }
+
+  .menu-section {
+    margin-bottom: 25px;
+  }
+
+  .menu-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #aa88ffcc;
+    border-bottom: 1px solid #5511ccaa;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .menu-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .menu-item {
+    background: rgba(50, 40, 70, 0.7);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #ddd;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 6px #6b4fff44;
+    transition:
+      background-color 0.25s ease,
+      box-shadow 0.3s ease,
+      transform 0.2s ease;
+    user-select: none;
+  }
+
+  .menu-item:hover, .menu-item.active {
+    background: #5a3affcc;
+    box-shadow: 0 0 12px #bb99ffcc;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Main Content Area */
+  #mainContent {
+    position: fixed;
+    top: 0; left: 280px; right: 0; bottom: 0;
+    background: rgba(5,5,15,0.95);
+    backdrop-filter: blur(8px);
+    border-left: 1px solid #5511ccaa;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 5;
+  }
+
+  #mainHeader {
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #bb99ff;
+    text-shadow: 0 0 8px #8866ff;
+    border-bottom: 1px solid #5511ccaa;
+    user-select: none;
+  }
+
+  #contentFrame {
+    flex: 1;
+    border: none;
+    background: #111;
+    border-radius: 0 0 8px 0;
+  }
+
+  /* Loading Overlay for iframe */
+  #loadingOverlay {
+    position: absolute;
+    top: 46px; /* below header */
+    left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 1.2rem;
+    z-index: 20;
+    user-select: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  #loadingOverlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Scroll for sidebar if needed */
+  #sidebar {
+    overflow-y: auto;
+  }
+  #sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  #sidebar::-webkit-scrollbar-thumb {
+    background: #5511ccbb;
+    border-radius: 3px;
+  }
+  #sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    #sidebar {
+      width: 70px;
+      padding: 20px 8px;
+    }
+    #sidebar h1, .menu-section h2 {
+      display: none;
+    }
+    .menu-list {
+      grid-template-columns: 1fr;
+    }
+    .menu-item {
+      padding: 12px 6px;
+      font-size: 0.75rem;
+    }
+    #mainContent {
+      left: 70px;
+    }
+  }
+</style>
 </head>
 <body>
-    <!-- Loading screen -->
-    <div id="loadingScreen">
-        <div class="loader"></div>
+
+<div id="sidebar">
+  <h1>mathpunch V3</h1>
+
+  <div class="menu-section" data-section="games">
+    <h2>Games</h2>
+    <div class="menu-list">
+      <div class="menu-item" data-url="https://mathpunch.github.io/beaver/">Drift Boss</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/goose/">Bottle Flip</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/butterfly/">Subway Surfers</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/duck/">Block Blast</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/pig/">OvO</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/panda/">BitLife</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/kitty/">Stickmanhook</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/dog/">Super Mario 64</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/bear/">Tiny Fishing</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/snake/">Tap Tap Shots</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/shark/">Drive Mad</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/zebra/">Emulator JS</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/turtle/">Wordle Unlimited</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/doggy/">Fruit Ninja</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/fox/">Rooftop Snipers</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/bat/">Tunnel Rush</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/wolf/">Burrito Bison</div>
+      <div class="menu-item" data-url="https://mathpunch.github.io/monkey/">Trash Truck Simulator</div>
     </div>
+  </div>
 
-    <!-- Animated star background -->
-    <div class="main"></div>
-
-    <header>
-        <h1>Welcome to mathpunch V3</h1>
-    </header>
-
-    <div class="content">
-        <!-- Games -->
-        <section class="category-card">
-            <h2>Games</h2>
-            <div class="button-grid">
-                <button onclick="goto('https://mathpunch.github.io/beaver/')">Drift Boss</button>
-                <button onclick="goto('https://mathpunch.github.io/goose/')">Bottle Flip</button>
-                <button onclick="goto('https://mathpunch.github.io/butterfly/')">Subway Surfers</button>
-                <button onclick="goto('https://mathpunch.github.io/duck/')">Block Blast</button>
-                <button onclick="goto('https://mathpunch.github.io/pig/')">OvO</button>
-                <button onclick="goto('https://mathpunch.github.io/panda/')">BitLife</button>
-                <button onclick="goto('https://mathpunch.github.io/kitty/')">Stickman Hook</button>
-                <button onclick="goto('https://mathpunch.github.io/dog/')">Super Mario 64</button>
-                <button onclick="goto('https://mathpunch.github.io/bear/')">Tiny Fishing</button>
-                <button onclick="goto('https://mathpunch.github.io/snake/')">Tap Tap Shots</button>
-                <button onclick="goto('https://mathpunch.github.io/shark/')">Drive Mad</button>
-                <button onclick="goto('https://mathpunch.github.io/zebra/')">Emulator JS</button>
-                <button onclick="goto('https://mathpunch.github.io/turtle/')">Wordle Unlimited</button>
-                <button onclick="goto('https://mathpunch.github.io/doggy/')">Fruit Ninja</button>
-                <button onclick="goto('https://mathpunch.github.io/fox/')">Rooftop Snipers</button>
-                <button onclick="goto('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
-                <button onclick="goto('https://mathpunch.github.io/wolf/')">Burrito Bison</button>
-                <button onclick="goto('https://mathpunch.github.io/monkey/')">Trash Truck Simulator</button>
-            </div>
-        </section>
-
-        <!-- Emulator JS -->
-        <section class="category-card">
-            <h2>Games for Emulator JS</h2>
-            <div class="button-grid">
-                <button onclick="goto('https://github.com/ixlmathgg/flashy/raw/main/Mario Kart.zip')">DS: Mario Kart</button>
-                <button onclick="goto('https://github.com/ixlmathgg/Licky/raw/main/Pokemon Red Fire.zip')">GBA: Pokémon Red Fire</button>
-                <button onclick="goto('https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO Star Wars II.zip')">GBA: Lego Star Wars II</button>
-            </div>
-        </section>
-
-        <!-- Proxies -->
-        <section class="category-card">
-            <h2>Proxy</h2>
-            <div class="button-grid">
-                <button onclick="proxy('https://arcticmath.vercel.app')">Server 1</button>
-                <button onclick="proxy('http://classroom.rocketpride.com')">Server 2</button>
-                <button onclick="proxy('http://library.rocketpride.com')">Server 3</button>
-                <button onclick="proxy('http://portal.rocketpride.com')">Server 4</button>
-                <button onclick="proxy('http://scholar.rocketpride.com')">Server 5</button>
-                <button onclick="proxy('http://academy.rocketpride.com')">Server 6</button>
-                <button onclick="proxy('http://learn.rocketpride.com')">Server 7</button>
-                <button onclick="proxy('http://projects.rocketpride.com')">Server 8</button>
-                <button onclick="proxy('http://resources.rocketpride.com')">Server 9</button>
-                <button onclick="proxy('http://studyhub.rocketpride.com')">Server 10</button>
-            </div>
-        </section>
-
-        <!-- Extra -->
-        <section class="category-card">
-            <h2>Extra</h2>
-            <div class="button-grid">
-                <button onclick="goto('https://discord.gg/vEQKTcR5nx')">X Plague X</button>
-                <button onclick="goto('https://mathpunch.github.io/robloxaccount/')">Roblox Account Taker</button>
-                <button onclick="goto('https://koj.vercel.app/')">GoGuardian Bypass</button>
-                <button onclick="goto('https://mathpunch.github.io/lion/')">Gatekeeping Version</button>
-                <button onclick="goto('https://discord.gg/my8Xkpvf/')">Discord Server</button>
-            </div>
-        </section>
-
-        <!-- Other -->
-        <section class="category-card">
-            <h2>Other Links</h2>
-            <div class="button-grid">
-                <button onclick="goto('https://docs.google.com/forms/d/e/1FAIpQLSeE-TsDjMLWCdc1wW7JioosUwZr02B9NkO9rEWMlPchUs-4bg/viewform?usp=dialog')">Game Requests</button>
-                <button onclick="goto('https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5')">Adblocker (iOS)</button>
-                <button onclick="goto('https://mathpunch.github.io/mrfish/')">Chatting</button>
-                <button onclick="goto('https://extramath.github.io/')">Backup Link 1</button>
-                <button onclick="goto('https://solixmath.github.io')">Backup Link 2</button>
-                <button onclick="goto('https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f')">Prank Shortcut (iOS)</button>
-                <button onclick="goto('https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/index.html')">index.html</button>
-                <button onclick="goto('https://raw.githubusercontent.com/mathpunch/mathpunch.github.io/refs/heads/main/style.css')">style.css</button>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        function goto(url) {
-            setTimeout(() => { window.location.href = url; }, 350);
-        }
-        function proxy(url) {
-            alert('A Proxy is A Website That You Can Go On Almost Any Websites');
-            goto(url);
-        }
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('fadeOut');
-                document.body.style.overflow = 'auto';
-            }, 2000);
-        };
-    </script>
-</body>
-</html>
+  <div class="menu-section" data-section="emulator">
+    <h2>Games For Emulator JS</h2>
+    <div class="menu-list">
+      <div class="menu-item
